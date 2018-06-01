@@ -1,9 +1,9 @@
 import setuptools
-from packagename.version import Version
+from packagename import __version__
 
 
 setuptools.setup(name='py-boilerplate',
-                 version=Version('1.0.0').number,
+                 version=__version__,
                  description='Python Package Boilerplate',
                  long_description=open('README.md').read().strip(),
                  author='Package Author',

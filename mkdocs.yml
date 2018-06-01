@@ -1,0 +1,30 @@
+site_name: Docs
+
+pages:
+  - Home: index.md
+
+repo_url: ""
+markdown_extensions:
+    - admonition
+    - codehilite
+    - toc:
+        permalink: True
+    - fenced_code
+    - sane_lists
+    - footnotes
+    - pymdownx.magiclink
+    - pymdownx.mark
+    - pymdownx.smartsymbols
+    - pymdownx.superfences
+    - pymdownx.tasklist:
+        custom_checkbox: true
+    - pymdownx.tilde
+
+extra_css: [static/style.css]
+extra_javascript: [static/docs_js.js]
+
+plugins:
+    - search
+
+google_analytics:
+  - ''

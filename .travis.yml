@@ -1,8 +1,23 @@
 language: python
 python:
   - "2.7"
-  - "3.3"
-  - "3.4"
-  - "3.5"
+  - "3.6"
 script:
   - py.test
+
+before_install:
+  - pip install -r requirements-dev.txt
+script:
+  - py.test
+after_success:
+  - COVERALLS_REPO_TOKEN=${COVERALLS_REPO_TOKEN} coveralls
+  - mkdocs build
+
+deploy:
+  - provider: pages
+    skip_cleanup: true
+    github_token: $GH_TOKEN
+    local_dir: site
+    edge: true
+    on:
+      branch: master
